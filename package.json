@@ -1,0 +1,36 @@
+{
+  "name": "food_dictator",
+  "version": "1.0.0",
+  "description": "Elect a Food Dictator for every meal. Never settle for consensus again.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhnsntmthy/food_dictator.git"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node spec",
+    "start": "babel-node --presets es2015 app.js"
+  },
+  "author": "Timothy Johnson",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "firebase": "^2.3.2",
+    "jasmine": "^2.4.1",
+    "jasmine-node": "^1.14.5",
+    "lodash-node": "^3.10.1",
+    "morgan": "^1.6.1",
+    "request": "^2.67.0",
+    "twilio": "^2.8.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "webpack": "^1.12.12"
+  }
+}

@@ -1,0 +1,45 @@
+SMS
+  DONE
+    Twilio Account & API
+    Firebase Account & API
+    sign up
+    name change
+    join team
+    start election
+    sms existing members
+    collect votes
+    countdown timer to election
+    election randomization
+    selecting (setting state of) winner
+    SMS existing members of the winner
+    SMS the winner a special message
+    reset election losers to members
+  ------  
+  TODO
+    countdown to reset
+
+
+WEB
+  DONE
+    Hosting on DigitalOcean?
+    Set up template
+    Install Firebase API
+    Collect phone number
+    Display name if it exists
+      collect it if not
+    collect team or show existing
+    button "Start Elections"
+    show Campaign in progress
+    show countdown timer
+    show Team state, campaign, election, ruling
+    show Winner when complete
+    prompt to reset back to show existing team
+      and option to change, or "start Elections"
+    Write copy for the website, including instructions how to SMS
+  ------
+  TODO
+
+    Create awesome graphic background
+    Write documentation on the project
+
+

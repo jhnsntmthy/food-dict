@@ -1,0 +1,51 @@
+
+
+Team States
+
+In order to progress a whole team through the election process, we modify the 
+team's state in the following order: awaiting -> campaign -> election -> ruling
+
+Awaiting State: none of the members have started an election since the last 
+  round. This is the default state of any team.
+
+Campaign State: when the state is transitioned to "campaign", all the current
+  members are notified via SMS, and prompted to opt-in (some active members 
+  may be out, or uninterested in eating at the time of an election). When a 
+  team is in this state and a member joins, they are automatically opted-in
+  (their user state changes from member to running-for-dictator). A campaign
+  countdown timer will be set for approx 10 minutes at which time the state 
+  will be transitioned to Election. 
+
+Election State: at the beginning of this state all the opted-in team members
+  will receive an SMS that voting has begun. Then a random member will be
+  chosen from the members and another SMS will be sent out declaring the 
+  ruler of choice. Each time a member wins, their score will be increased by 
+  one. The randomization function will randomly choose between all participating
+  members with the lowest scores, so that everyone gets a fairly even chance
+  of being the next dictator (based on their attendance anyway)
+
+Ruling State
+  There is one dictator in charge. A countdown timer is set to 1 hour and will
+  then reset the team state to "Awaiting", unless the current dictator chooses 
+  to step down or abdicate his position. During this time Karma can be added to
+  the current dictator by voting up or down.
+
+
+Firebase Watchers in Node
+
+In order to keep our NoSql data denormalized, but properly in sync, as well as 
+to keep our code clean, we have observers set up on the Firebase DB to watch
+and react to data that is being added and changed. For instance:
+
+1. When a new user is added to the DB, and chooses a TEAM, the observer will
+  make sure the team exists in the teams collection and that the user is 
+  a part of the teams membership with a score of zero. If the member was 
+  already a part of that team before, his score remains the same (to keep
+  the voting distribution even)
+2. When the status of the team is changed from "awaiting" to "election", the
+  observer will go through users that are currently members of that team and
+  send them an SMS to opt-in to the election. We poll the users collection for
+  those who are currently active, as the members collection inside the team
+  is a collection of current and past members, and only holds their score
+  for voting purposes.
+3. 

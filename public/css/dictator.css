@@ -1,0 +1,29 @@
+.service-box input {
+  font-size: 22px;
+  text-align: center;
+  border: #555 2px solid;
+  width: 100%;
+  padding: 4px 10px;
+  margin: 0.5em 0;
+}
+.header-content-inner p {
+  background-color: #131e15;
+  color: #fff;
+  padding: 10px 15px;
+}
+.service-box input[type=submit] {
+  width: 50%;
+  float: right;
+}
+#loading-indicator img {
+  text-align: center;
+}
+#election-btn-row {
+  margin-top: 3em;
+}
+.teamname {
+  text-transform: uppercase;
+}
+.dat-status {
+  margin: 2em 0;
+}
